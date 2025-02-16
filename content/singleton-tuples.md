@@ -1,27 +1,41 @@
 ---
 layout: sip
 permalink: /sips/:title.html
-stage: implementation
-status: waiting-for-implementation
-presip-thread: https://contributors.scala-lang.org/t/pre-sip-foo-bar/9999
-title: SIP-NN - Title of the Proposal
+stage: design
+status: under-review
+presip-thread: https://contributors.scala-lang.org/t/syntax-for-type-tuple-with-one-element/6974
+title: SIP-NN - Syntax for nullary and singleton tuples
 ---
 
-**By: Author A and Author B and Author C**
+**By: Quentin Bernet**
 
 ## History
 
 | Date          | Version            |
 |---------------|--------------------|
-| Feb 19th 2022 | Initial Draft      |
-| Feb 20th 2022 | Alteration Details |
+| Feb 16th 2025 | Initial Draft      |
 
 ## Summary
 
+<!--
 A summary of the proposed changes. This should be no longer than 3 paragraphs. It is intended to serve in two ways:
 
 - For a first-time reader, a high-level overview of what they should expect to see in the proposal.
 - For returning readers, a quick reminder of what the proposal is about.
+-->
+
+This proposal adds a ways to create tuples of 0 and 1 elements with new syntax (for both term and type tuples).
+This syntax aims to be consistent with the existing tuple syntax while remaining unambiguous.
+
+### Examples
+
+```scala
+val emptyTuple: EmptyTuple = (,)
+val tuple0: (,) = (,)
+val tuple1: (Int,) = (1,)
+
+val namedTuple1: (k: Int,) = (k = 1,)
+```
 
 ## Motivation
 
